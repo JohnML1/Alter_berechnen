@@ -1,0 +1,133 @@
+object Form1: TForm1
+  Left = 509
+  Height = 261
+  Top = 174
+  Width = 460
+  BorderWidth = 10
+  Caption = 'Alter berechnen in Jahren Monaten Tagen ...'
+  ClientHeight = 261
+  ClientWidth = 460
+  OnCreate = FormCreate
+  LCLVersion = '1.3'
+  object DateEditVon: TDateEdit
+    Left = 10
+    Height = 21
+    Hint = 'Datum eintippen oder über Schaltfläche auswählen'
+    Top = 28
+    Width = 80
+    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+    OKCaption = 'OK'
+    CancelCaption = 'Cancel'
+    DateOrder = doNone
+    ButtonWidth = 23
+    CharCase = ecNormal
+    NumGlyphs = 1
+    MaxLength = 0
+    OnEditingDone = DateEditEditingDone
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+  end
+  object DateEditBis: TDateEdit
+    Left = 170
+    Height = 21
+    Hint = 'Datum eintippen oder über Schaltfläche auswählen'
+    Top = 28
+    Width = 80
+    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+    OKCaption = 'OK'
+    CancelCaption = 'Cancel'
+    DateOrder = doNone
+    ButtonWidth = 23
+    CharCase = ecNormal
+    NumGlyphs = 1
+    MaxLength = 0
+    OnEditingDone = DateEditEditingDone
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+  end
+  object ListBox1: TListBox
+    Left = 10
+    Height = 171
+    Hint = 'markierten Eintrag über Rechtsklick kopieren!'
+    Top = 80
+    Width = 440
+    Align = alBottom
+    ItemHeight = 0
+    ParentShowHint = False
+    PopupMenu = PopupListBox1
+    ShowHint = True
+    TabOrder = 2
+  end
+  object btnCalc: TButton
+    Left = 315
+    Height = 25
+    Top = 28
+    Width = 133
+    Caption = '&berechnen'
+    OnClick = btnCalcClick
+    TabOrder = 3
+  end
+  object Label1: TLabel
+    Left = 10
+    Height = 13
+    Top = 14
+    Width = 56
+    Caption = 'von Datum:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 170
+    Height = 13
+    Top = 14
+    Width = 51
+    Caption = 'bis Datum:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 10
+    Height = 13
+    Top = 67
+    Width = 440
+    Align = alBottom
+    Caption = 'Ergebnis:'
+    ParentColor = False
+  end
+  object TempEdit: TEdit
+    Left = 315
+    Height = 21
+    Top = 6
+    Width = 80
+    TabOrder = 4
+    Text = 'TempEdit'
+    Visible = False
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <    
+      item
+        Name = 'DateEditVon'
+        OnSave = IniPropStorage1StoredValues0Save
+        OnRestore = IniPropStorage1StoredValues0Restore
+      end    
+      item
+        Name = 'DateEditBis'
+        OnSave = IniPropStorage1StoredValues1Save
+        OnRestore = IniPropStorage1StoredValues1Restore
+      end>
+    left = 56
+    top = 80
+  end
+  object PopupListBox1: TPopupMenu
+    left = 232
+    top = 132
+    object EmptyLisBox1: TMenuItem
+      Caption = 'Ergebnisliste leeren'
+      OnClick = EmptyLisBox1Click
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'markierten Eintrag kopieren'
+      OnClick = MenuItem1Click
+    end
+  end
+end
